@@ -22,4 +22,3 @@ public class GrossPayCalculator {
         System.out.println("The employee gross pay is " + grossPay + " USD.");
     }
 }
-//Te amo y te quiero mucho ma besos.
