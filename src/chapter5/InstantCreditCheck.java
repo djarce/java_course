@@ -12,7 +12,7 @@ public class InstantCreditCheck {
     //Initialize what we know.
     static int requiredSalary = 25000;
     static int requiredCreditScore = 700;
-    static Scanner scanner = Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String [] args){
 
@@ -22,9 +22,10 @@ public class InstantCreditCheck {
         scanner.close();
 
         //Check if the user is qualified.
-        isUserQualified(creditScore, salary);
+        boolean qualified = isUserQualified(creditScore, salary);
 
         //Notify the user.
+        notifyUser(qualified);
     }
 
     public static double getSalary(){
@@ -45,6 +46,14 @@ public class InstantCreditCheck {
             return true;
         }else{
             return false;
+        }
+    }
+
+    public static void notifyUser(boolean isQualified){
+        if(isQualified){
+            System.out.println("Congrats! You've been approved.");
+        }else{
+            System.out.println("Sorry. You've been declined.");
         }
     }
 }
